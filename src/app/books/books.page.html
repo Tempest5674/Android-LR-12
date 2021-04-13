@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Книги автора {{authorName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let book of books" text-wrap>
+      <ion-icon name="book" slot="start"></ion-icon>
+      <ion-label text-wrap>{{book.bookName}}</ion-label>
+      <ion-note slot="end">{{book.pages}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label position="floating">Дані на home</ion-label>
+    <ion-input type="text" [(ngModel)]="textData"></ion-input>
+  </ion-item>
+  <ion-button color="primary" class="ion-float-right" (click)="passData()">
+    <ion-icon slot="start" name="sync"></ion-icon>
+    Повернути дані
+  </ion-button>
+</ion-content>
